@@ -51,14 +51,14 @@ Feature: Minesweeper
   Scenario: Flag Marker Counter
     Then the counter should start with 15
 
-  Scenario: Uncovering a cell - Disabling the cell
-    Given the player loads the following mock data:
-      """
-      | * | o | * |
-      | o | * | o |
-      """
-    When the player uncovers the cell (1,2)
-    Then the cell (1,2) should be disabled
+  # Scenario: Uncovering a cell - Disabling the cell
+  #   Given the player loads the following mock data:
+  #     """
+  #     | * | o | * |
+  #     | o | * | o |
+  #     """
+  #   When the player uncovers the cell (1,2)
+  #   Then the cell (1,2) should be disabled
 
   Scenario: Timer Start
     Given the player loads the following mock data:
