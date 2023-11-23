@@ -9,15 +9,31 @@ on:
 #     types: [opened, synchronize]
 
 jobs:
-    hello_world_job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Hello world action step
-              run: echo "Hello world!"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+        - uses: actions/setup-node@v4
+          with:
+            node-version: 18
+        - name: Install dependencies
+          run: yarn install
+        - name: Lint
+          run: yarn eslint
 
-            - name: Fecha de hoy
-              run: echo "La fecha de hoy es $(date)"
-            - run: ls -l
+
+# jobs: 
+#     hello_world_job:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - name: Hello world action step
+#               run: echo "Hello world!"
+
+#             - name: Fecha de hoy
+#               run: echo "La fecha de hoy es $(date)"
+#             - run: ls -l
 
 
 # jobs:
