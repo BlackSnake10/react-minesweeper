@@ -15,6 +15,10 @@ jobs:
             - name: Hello world action step
               run: echo "Hello world!"
 
+            - name: Fecha de hoy
+              run: echo "La fecha de hoy es $(date)"
+            - run: ls -l
+
 
 # jobs:
 
